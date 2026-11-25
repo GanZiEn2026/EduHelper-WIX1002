@@ -10,4 +10,7 @@ package eduhelper.wix1002;
  */
 public class User {
     //testtest
+    public static void main(String[] args) {
+        
+    }
 }
