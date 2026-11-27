@@ -12,7 +12,7 @@ package eduhelper.wix1002;
 //tutor also sub class of User
 public abstract class Tutor extends User {
     
-    int diagosticScore;
+    int diagnosticScore;
     double hourlyRate;
     double ratingSum;
     int ratingCount;
@@ -31,7 +31,7 @@ public abstract class Tutor extends User {
             throw new InvalidInputException("Diagnostic score cannot be more than 100.");
         }
         
-        diagosticScore = score;
+        diagnosticScore = score;
         hourlyRate = rate;
         ratingSum = 0;
         ratingCount = 0;
@@ -41,6 +41,7 @@ public abstract class Tutor extends User {
     public abstract double getMaxAllowedRate();
     
     //own version of getRoleSummary() from User
+    @Override
     public String getRoleSummary(){
         return "Tutor: " + name + " (" + userId + ")"
              + " | Rate: RM" + hourlyRate + "/hr"
@@ -64,7 +65,7 @@ public abstract class Tutor extends User {
     }
     
     //check new hourly rate against the tutor fees limit
-    public void setHourlyRate(double newRate) throws InvalidInputExeption{
+    public void setHourlyRate(double newRate) throws InvalidInputException{
         if(newRate>getMaxAllowedRate()){
             throw new InvalidInputException(
             "Rate RM" + newRate + " is too high. Maximum allowed is RM" + getMaxAllowedRate() + ".");
