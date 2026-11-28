@@ -68,7 +68,7 @@ public class Matcher {
 
     // Returns the single best-ranked tutor for the student
     public Tutor findBestTutor(Student student, Tutor[] allTutors, int tutorCount)
-            throws NoTutorFound {
+                               throws NoTutorFound {
         Tutor[] ranked = findMatchingTutors(student, allTutors, tutorCount);
         return ranked[0];
     }
